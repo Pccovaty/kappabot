@@ -76,7 +76,6 @@ bot.on("message", async message => {
 
     if(cmd === `${prefix}ping`){
         message.channel.send("pong")
-        message.react("GWmythiBlobLUL:389447025592238092")
     }
     if(cmd === `${prefix}kick`){
       const kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
@@ -94,8 +93,8 @@ bot.on("message", async message => {
     .addField("Wyrzucony", kUser)
     .addField("Powód", kReason)
 
-    const incidentchannel = message.guild.channels.find("name", "mod-log");
-    if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``mod-log``");
+    const incidentchannel = message.guild.channels.find("name", "❌logi_kar");
+    if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``❌logi_kar``");
 
     incidentchannel.send(kickeembed);
 
@@ -106,8 +105,8 @@ bot.on("message", async message => {
   const member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if (!member) return message.channel.send("Oznacz użytkownika!");
   const bReason = args.join(" ").slice(22);
-  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":lock: Dostęp zablokowany. Nie posiadasz roli ``moderator``");
-  if (member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":lock: Dostęp zablokowany. Nie posiadasz roli ``moderator```");
+  if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":lock: Dostęp zablokowany. Nie posiadasz roli ``Moderator`` lub wyższej");
+  if (member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":lock: Dostęp zablokowany. Nie posiadasz roli ``Moderator`` lub wyższej");
   const banEmbed = new Discord.RichEmbed()
     .setDescription("~Ban~")
     .setColor("#9b0090")
@@ -115,8 +114,8 @@ bot.on("message", async message => {
     .addField("Zbanowany Użytkownik", `${member.user.tag}`)
     .addField("Powód", bReason);
 
-  const incidentchannel = message.guild.channels.find("name", "mod-log");
-  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``mod-log``");
+  const incidentchannel = message.guild.channels.find("name", "❌logi_kar");
+  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``❌logi_kar``");
   message.channel.send(`Pomyślnie zbanowano użytkownika: ${member.user.tag}, Powód: **${bReason}**, `);
 
 
@@ -131,22 +130,22 @@ bot.on("message", async message => {
       const eambed = new Discord.RichEmbed()
       .setTitle("Komendy w bocie Chill BOT")
       .setColor('RANDOM')
-      .addField("Moderator (8)", "**/mute <mention> <1s/m/h/d>** - wycisza danego użytkownika na X czasu \n **/unmute** - odcisza danego użytkownika \n **/warn** - ostrzega użytkownika \n ~~**/sprawdz** - pokazuje ile dany uzytkownik ma warnów~~ \n **/clear x** - Usuwa x wiadomości (max 100) \n **/ban** - Banuje danego użytkownika \n **/kick** - Wyrzuca danego użytkownika \n **/mute x** - Wycisza danego uzytkownika na X czasu \n ")
+      .addField("Moderator (8)", "**/mute <mention> <1s/m/h/d>** - wycisza danego użytkownika na X czasu \n **/unmute** - odcisza danego użytkownika \n **/warn** - ostrzega użytkownika \n ~~**/sprawdz** - pokazuje ile dany uzytkownik ma warnów~~ \n **/clear x** - Usuwa x wiadomości (max 100) \n **/ban** - Banuje danego użytkownika \n **/kick** - Wyrzuca danego użytkownika  \n ")
     message.channel.send("<:Info:484996951515856906> | Lista komend została wysłana na prywatną wiadomość")
     message.author.send(eambed)
     }
     if(cmd === `${prefix}mute`){
 
-      if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Nie da się.");
+      if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(":lock: Dostęp zablokowany. Nie posiadasz roli ``Moderator`` lub wyższej");
       if(args[0] == "help"){
         message.reply("Poprawne użycie: /mute <mention> <1s/m/h/d>");
         return;
       }
       let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-      if(!tomute) return message.reply("Nie znalazłem użytkownika");
-      if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Nie można wyciszyć tego użytkownika!");
+      if(!tomute) return message.reply("Oznacz najpierw użytkownika");
+      if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply(":lock: Dostęp zablokowany. Nie posiadasz roli ``Moderator`` lub wyższej");
       let reason = args.slice(2).join(" ");
-      if(!reason) return message.reply("Podaj przyczynę.");
+      if(!reason) return message.reply("Podaj przyczynę wyciszenia.");
     
       let muterole = message.guild.roles.find(`name`, "Mute");
       //start of create role
@@ -191,8 +190,8 @@ bot.on("message", async message => {
       .addField("Na czas", mutetime)
       .addField("Powód", reason);
     
-      let incidentschannel = message.guild.channels.find(`name`, "mod-log");
-      if(!incidentschannel) return message.reply("Nie znalazłem kanału ``mod-log``");
+      let incidentschannel = message.guild.channels.find(`name`, "❌logi_kar");
+      if(!incidentschannel) return message.reply("Nie znalazłem kanału ``❌logi_kar``");
       incidentschannel.send(muteembed);
     
       await(tomute.addRole(muterole.id));
@@ -214,7 +213,7 @@ bot.on("message", async message => {
     
     if(cmd === `${prefix}clear`){
       
-      if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Brak permisji do ``clear``");
+      if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(":lock: Dostęp zablokowany. Nie posiadasz roli ``Moderator`` lub wyższej");
       if (!args[0]) return message.channel.send("Usuwanie wiadomości musi być większa od 0 ale mniejsza od 100");
       message.channel.bulkDelete(args[0]).then(() => {
         message.channel.send(`usunięto **${args[0]}** wiadomości.`).then(msg => msg.delete(2000));
@@ -228,7 +227,7 @@ bot.on("message", async message => {
       const warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
       message.react("452183703267835910");
       //!warn @daeshan <reason>
-      if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("Brak permisji do ``warn``");
+      if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(":lock: Dostęp zablokowany. Nie posiadasz roli ``Moderator`` lub wyższej");
       const wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
       if (!wUser) return message.reply("Nie mogłem znaleźć użytkownika");
       const reason = args.join(" ").slice(22);
@@ -246,7 +245,6 @@ bot.on("message", async message => {
       });
     
       const warnEmbed = new Discord.RichEmbed()
-        .setDescription("Ostrzeżenie")
         .setAuthor("Warn")
         .setColor("#9b0090")
         .addField("Ostrzezony przez", message.author.tag)
@@ -255,8 +253,8 @@ bot.on("message", async message => {
         .addField("Powód", reason)
         .addField("Maksymalna liczba ostrzeżeń", "**3**")
     
-      const warnchannel = message.guild.channels.find("name", "mod-log");
-      if (!warnchannel) return message.reply("Nie znalazłem kanału ``mod-log``");
+      const warnchannel = message.guild.channels.find("name", "❌logi_kar");
+      if (!warnchannel) return message.reply("Nie znalazłem kanału ``❌logi_kar``");
     
       warnchannel.send(warnEmbed);
     
