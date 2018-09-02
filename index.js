@@ -132,8 +132,8 @@ bot.on("message", async message => {
       .setTitle("Komendy w bocie Chill BOT")
       .setColor('RANDOM')
       .addField("Moderator (8)", "**/mute <mention> <1s/m/h/d>** - wycisza danego użytkownika na X czasu \n **/unmute** - odcisza danego użytkownika \n **/warn** - ostrzega użytkownika \n ~~**/sprawdz** - pokazuje ile dany uzytkownik ma warnów~~ \n **/clear x** - Usuwa x wiadomości (max 100) \n **/ban** - Banuje danego użytkownika \n **/kick** - Wyrzuca danego użytkownika  \n ")
-    message.channel.send("<:Info:484996951515856906> | Lista komend została wysłana na prywatną wiadomość")
-    message.author.send(eambed)
+    message.channel.send(eambed)
+
     }
     if(cmd === `${prefix}mute`){
 
