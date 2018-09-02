@@ -1,0 +1,17 @@
+{
+  "name": "centrum-chillubot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kociak",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "fs": "0.0.1-security",
+    "moment": "^2.22.2",
+    "ms": "^2.1.1"
+  }
+}
