@@ -228,7 +228,7 @@ bot.on("message", async message => {
       const warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
       message.react("452183703267835910");
       //!warn @daeshan <reason>
-      if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(":lock: Dostęp zablokowany. Nie posiadasz roli ``Moderator`` lub wyższej");
+      if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(":lock: Dostęp zablokowany. Nie posiadasz roli ``Moderator`` lub wyższej");
       const wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
       if (!wUser) return message.reply("Nie mogłem znaleźć użytkownika");
       const reason = args.join(" ").slice(22);
