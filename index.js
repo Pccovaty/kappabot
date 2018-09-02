@@ -76,7 +76,11 @@ bot.on("message", async message => {
     let args = messageArray.slice(1);
 
     if(cmd === `${prefix}ping`){
-        message.channel.send("pong")
+        const then = Date.now();
+  message.channel.send("Ping... ").then(m => {
+    m.edit(`Pong! Twój aktualny ping wynosi ${Date.now() - then}ms.`);
+  });
+  message.react("452183703267835910");
     }
     if(cmd === `${prefix}kick`){
       const kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
