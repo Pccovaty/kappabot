@@ -305,5 +305,6 @@ bot.on("message", async message => {
     .setDescription(`prefix ustawiony! na ${args[0]}`);
 
   message.channel.send(sEmbed);
+  }
 });
 bot.login(process.env.BOT_TOKEN);
