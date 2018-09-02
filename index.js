@@ -12,11 +12,11 @@ bot.on("ready", async () => {
   bot.user.setActivity("Centrum chillu ", {type: "WATCHING"});
 });
 const serverStats = {
-    guildID: "429883945501327360",
-    totalUsersID: "484994269543661569",
-    memberCountID: "484994450104516609",
-    botCountID: "484994288908894208",
-    onlinecountID: "484994343657144331"
+    guildID: "425741299719602195",
+    totalUsersID: "485887154686263297",
+    memberCountID: "485887171518267393",
+    botCountID: "485887189125693450",
+    onlinecountID: "485887237146279957"
     
   
   };
