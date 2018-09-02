@@ -300,4 +300,4 @@ bot.on("message", async message => {
       message.react("452183703267835910");
     }
 });
-bot.login(tokenfile.token);
+bot.login(process.env.BOT_TOKEN);
