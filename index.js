@@ -25,18 +25,18 @@ const serverStats = {
   
     if (member.guild.id !== serverStats.guildID) return;
   
-    bot.channels.get(serverStats.totalUsersID).setName(`✭ Użytkowników: ${member.guild.memberCount}`);
-    bot.channels.get(serverStats.memberCountID).setName(`✭ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
+    bot.channels.get(serverStats.totalUsersID).setName(`➫Użytkowników: ${member.guild.memberCount}`);
+    bot.channels.get(serverStats.memberCountID).setName(`➫ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
     bot.channels.get(serverStats.onlinecountID).setName(`👋 ${member.user.username}`);
-    bot.channels.get(serverStats.botCountID).setName(`✭ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
+    bot.channels.get(serverStats.botCountID).setName(`➫ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
   });
   bot.on("guildMemberRemove", member => {
   
     if (member.guild.id !== serverStats.guildID) return;
   
-    bot.channels.get(serverStats.totalUsersID).setName(`✭ Użytkowników: ${member.guild.memberCount}`);
-    bot.channels.get(serverStats.memberCountID).setName(`✭ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
-    bot.channels.get(serverStats.botCountID).setName(`✭ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
+    bot.channels.get(serverStats.totalUsersID).setName(`➫ Użytkowników: ${member.guild.memberCount}`);
+    bot.channels.get(serverStats.memberCountID).setName(`➫ Ludzi: ${member.guild.members.filter(m => !m.user.bot).size}`);
+    bot.channels.get(serverStats.botCountID).setName(`➫ Botów: ${member.guild.members.filter(m => m.user.bot).size}`);
   
   });
 
