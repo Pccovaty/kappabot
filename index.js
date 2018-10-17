@@ -46,7 +46,7 @@ const serverStats = {
     const welcomechannel = member.guild.channels.find("name", "👋witamy-żegnamy");
     const welcomeEmebed = new Discord.RichEmbed()
     .setColor("#9b0090")
-    .addField(`**${member.user.username}** witaj na ⭐Centrum Chillu⭐! Have fun! 👻🙌`, `Koniecznie zapoznaj sie z zasadami które są na #regulamin \n aktualnie jest nas: **${member.guild.memberCount}**`);
+    .addField(`**${member.user.username}** witaj na ⭐Centrum Chillu⭐! Have fun! 👻🙌`, `Koniecznie zapoznaj sie z zasadami które są na <#499248712833302538> Have fun and ejnoy! \n aktualnie jest nas: **${member.guild.memberCount}**`);
    welcomechannel.send(welcomeEmebed);
   });
   bot.on("message", async message => {
