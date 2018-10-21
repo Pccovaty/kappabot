@@ -98,8 +98,8 @@ bot.on("message", async message => {
     .addField("Wyrzucony", kUser)
     .addField("Powód", kReason)
 
-    const incidentchannel = message.guild.channels.find("name", "❌logi-kar");
-    if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``❌logi-kar``");
+    const incidentchannel = message.guild.channels.find("name", "logi-kar");
+    if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``logi-kar``");
 
     incidentchannel.send(kickeembed);
 
@@ -119,8 +119,8 @@ bot.on("message", async message => {
     .addField("Zbanowany Użytkownik", `${member.user.tag}`)
     .addField("Powód", bReason);
 
-  const incidentchannel = message.guild.channels.find("name", "❌logi-kar");
-  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``❌logi-kar``");
+  const incidentchannel = message.guild.channels.find("name", "logi-kar");
+  if (!incidentchannel) return message.channel.send("Nie mogę znaleźć kanału. ``logi-kar``");
   message.channel.send(`Pomyślnie zbanowano użytkownika: ${member.user.tag}, Powód: **${bReason}**, `);
 
 
@@ -196,8 +196,8 @@ bot.on("message", async message => {
       .addField("Na czas", mutetime)
       .addField("Powód", reason);
     
-      let incidentschannel = message.guild.channels.find(`name`, "❌logi-kar");
-      if(!incidentschannel) return message.reply("Nie znalazłem kanału ``❌logi-kar``");
+      let incidentschannel = message.guild.channels.find(`name`, "logi-kar");
+      if(!incidentschannel) return message.reply("Nie znalazłem kanału ``logi-kar``");
       incidentschannel.send(muteembed);
     
       await(tomute.addRole(muterole.id));
@@ -259,8 +259,8 @@ bot.on("message", async message => {
         .addField("Powód", reason)
         .addField("Maksymalna liczba ostrzeżeń", "**3**")
     
-      const warnchannel = message.guild.channels.find("name", "❌logi-kar");
-      if (!warnchannel) return message.reply("Nie znalazłem kanału ``❌logi-kar``");
+      const warnchannel = message.guild.channels.find("name", "logi-kar");
+      if (!warnchannel) return message.reply("Nie znalazłem kanału ``logi-kar``");
     
       warnchannel.send(warnEmbed);
     
