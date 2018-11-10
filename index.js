@@ -43,7 +43,7 @@ const serverStats = {
   bot.on("guildMemberAdd", async member => {
     console.log(`${member.id} dołączył(a) na serwer.`);
   
-    const welcomechannel = member.guild.channels.find("name", "👋witamy-żegnamy");
+    const welcomechannel = member.guild.channels.find("name", "witamy-żegnamy");
     const welcomeEmebed = new Discord.RichEmbed()
     .setColor("#9b0090")
     .addField(`**${member.user.username}** witaj na ⭐Centrum Chillu⭐! Have fun! 👻🙌`, `Koniecznie zapoznaj sie z zasadami które są na <#499248712833302538> Have fun and ejnoy! \n aktualnie jest nas: **${member.guild.memberCount}**`);
@@ -58,7 +58,7 @@ const serverStats = {
   bot.on("guildMemberRemove", async member => {
     console.log(`${member.id} wyszedł z serwera.`);
   
-    const welcomechannel = member.guild.channels.find("name", "👋witamy-żegnamy");
+    const welcomechannel = member.guild.channels.find("name", "witamy-żegnamy");
     const welcomeEmbed = new Discord.RichEmbed()
       .setColor("#9b0090")
       .addField(`O nie! użytkownik ${member.user.username} opuścił(a) ⭐Centrum Chillu⭐ 😦`, "Nie wytrzymał(a) presji i uciekł(a) do ciepłych krajów")
