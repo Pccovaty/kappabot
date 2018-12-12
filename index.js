@@ -13,11 +13,11 @@ bot.on("ready", async () => {
   bot.user.setActivity("Centrum chillu ", {type: "WATCHING"});
 });
 const serverStats = {
-    guildID: "425741299719602195",
-    totalUsersID: "485887154686263297",
-    memberCountID: "485887171518267393",
-    botCountID: "485887189125693450",
-    onlinecountID: "485887237146279957"
+    guildID: "516351264318291968",
+    totalUsersID: "522479632528703488",
+    memberCountID: "522479718092767233",
+    botCountID: "522480381526802456",
+    onlinecountID: "522479742662737951"
     
   
   };
@@ -45,8 +45,8 @@ const serverStats = {
   
     const welcomechannel = member.guild.channels.find("name", "witamy-żegnamy");
     const welcomeEmebed = new Discord.RichEmbed()
-    .setColor("#9b0090")
-    .addField(`**${member.user.username}** witaj na ⭐Centrum Chillu⭐! Have fun! 👻🙌`, `Koniecznie zapoznaj sie z zasadami które są na <#499248712833302538> Have fun and ejnoy! \n aktualnie jest nas: **${member.guild.memberCount}**`);
+    .setColor("RANDOM")
+    .addField(`**${member.user.username}** witaj na ⭐Centrum Chillu⭐! Have fun! 👻🙌`, `Koniecznie zapoznaj sie z zasadami! Have fun and ejnoy! \n aktualnie jest nas: **${member.guild.memberCount}**`);
    welcomechannel.send(welcomeEmebed);
   });
   bot.on("message", async message => {
@@ -60,7 +60,7 @@ const serverStats = {
   
     const welcomechannel = member.guild.channels.find("name", "witamy-żegnamy");
     const welcomeEmbed = new Discord.RichEmbed()
-      .setColor("#9b0090")
+      .setColor("RANDOM")
       .addField(`O nie! użytkownik ${member.user.username} opuścił(a) ⭐Centrum Chillu⭐ 😦`, "Nie wytrzymał(a) presji i uciekł(a) do ciepłych krajów")
       .addField(`Aktualnie zostało nas ${member.guild.memberCount}`, "Mamy nadzieje że wrócisz!")
     welcomechannel.send(welcomeEmbed);
