@@ -67,8 +67,8 @@ message.channel.send("Tylko Autor bota moze uzyc tej komendy.")
   }
 });
 bot.on("message", async message => {
-  if (message.content === "<@465227329661304834>") {
-    return message.channel.send("<:Info:484996951515856906> | mój prefix to ``b<``.");
+  if (message.content === "<@478200725340553226>") {
+    return message.channel.send("<:Info:484996951515856906> | mój prefix to ``/``.");
   }
 
 });
@@ -193,14 +193,14 @@ const kickeembed = new Discord.RichEmbed()
       const help = new Discord.RichEmbed()
 .setTitle("Lista kategorii:")
 .setColor("GREEN")
-.setDescription("Aby wyświetlić całkowitą liste komend do podanej kategorii wpisz ``/help [nazwa kategorii]`` \n \n ``administracyjne (7)`` \n ``zabawa (X)``")
+.setDescription("Aby wyświetlić całkowitą liste komend do podanej kategorii wpisz ``/help [nazwa kategorii]`` \n \n ``administracyjne (6)`` \n ``zabawa (X)``")
 const administracyjne = new Discord.RichEmbed()
 .setTitle("Lista komend w kategorii: Administracyjne")
 .setDescription("``/ban <@user> <powód>`` - Banuje użytkownika \n \n ``/kick <@user> <powód>`` - Wyrzuca użytkownika \n \n ``/clear <liczba wiadomości>`` - usuwa X liczbe wiadomości (nie moze byc mniejsza od 1 ani wieksza od 100) \n \n ``/mute <@user> <powod>`` - Wycisza użytkownika \n \n ``/unmute <@user> <powód>`` - Odcisza użytkownika")
 .setColor("RED")
 const zabawa = new Discord.RichEmbed()
 .setTitle("Lista komend w kategorii: Zabawa")
-.setDescription("w budowie")
+.setDescription("``/ping`` - pokazuje twój aktualny ping \n \n ``Więcej komend już wkrótce!")
 .setColor("RED")
 if (args[0] == "administracyjne"){
         message.channel.send(administracyjne)
