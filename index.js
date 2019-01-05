@@ -5,21 +5,6 @@ const fs = require("fs");
 const moment = require("moment");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
-fs.readdir("./komendy/", (err, files) => {
-
-  if (err) console.log(err);
-  const jsfile = files.filter(f => f.split(".").pop() === "js");
-  if (jsfile.length <= 0) {
-    console.log("Nie znaleziono komendy");
-    return;
-  }
-
-  jsfile.forEach((f, i) => {
-    const props = require(`./komendy/${f}`);
-    console.log(`${f} loaded!`);
-    bot.commands.set(props.help.name, props);
-  });
-});
 
 
 const serverStats = {
