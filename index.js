@@ -18,16 +18,16 @@ bot.on("guildMemberAdd", member => {
   
   if (member.guild.id !== serverStats.guildID) return;
 
-  bot.channels.get(serverStats.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
-  bot.channels.get(serverStats.onlinecountID).setName(`|👭| ${member.user.tag}`);
-  bot.channels.get(serverStats.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+  bot.channels.get(serverStats.totalUsersID).setName(`➸ Osób: ${member.guild.memberCount}`);
+  bot.channels.get(serverStats.onlinecountID).setName(`➸ ${member.user.tag}`);
+  bot.channels.get(serverStats.botCountID).setName(`➸ Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 bot.on("guildMemberRemove", member => {
 
   if (member.guild.id !== serverStats.guildID) return;
 
-  bot.channels.get(serverStats.totalUsersID).setName(`|👥| Osób: ${member.guild.memberCount}`);
-  bot.channels.get(serverStats.botCountID).setName(`|🤖| Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
+  bot.channels.get(serverStats.totalUsersID).setName(`➸ Osób: ${member.guild.memberCount}`);
+  bot.channels.get(serverStats.botCountID).setName(`➸ Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 bot.on("guildMemberAdd", async member => {
 
@@ -88,7 +88,7 @@ bot.on("ready", async() => {
  
        let online = all - offline;	
  
-          bot.channels.get('522482489554632725').setName("|🔵| Online: " + online);	
+          bot.channels.get('522482489554632725').setName("➸ Online: " + online);	
  
           all = 0;	
          offline = 0;	
