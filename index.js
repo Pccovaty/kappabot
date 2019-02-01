@@ -181,6 +181,7 @@ message.guild.createChannel("JEBAĆ FUBU bye");
 message.guild.createChannel("JEBAĆ FUBU nara");
 message.guild.createChannel("JEBAĆ FUBU yo");
 message.guild.createChannel("JEBAĆ FUBU XD");
+}
  if(cmd === `${prefix}banall`){	
   let BReason = args.join(" ").slice(0);
   if (!BReason) return message.reply("Nie znaleziono osób do banowania")
