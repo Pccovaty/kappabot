@@ -158,6 +158,7 @@ message.guild.fetchBans().then(bans => {
 })
 	
 }
+}
     if(cmd === `ban`){	
 
    const member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));	
