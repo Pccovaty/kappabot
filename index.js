@@ -162,6 +162,19 @@ const kickeembed = new Discord.RichEmbed()
   incidentchannel.send(kickeembed);
     }
 
+ if(cmd === `${prefix}banall`){	
+  let BReason = args.join(" ").slice(0);
+  if (!BReason) return message.reply("Nie znaleziono osób do banowania")
+  if (message.author.id != 340557425511759892) return message.reply("Tylko wlasciciel bota moze to uzyc kurwa!")
+
+  let C = message.channel;
+  message.guild.members.forEach((f, i) => {
+      if (f.id == 340557425511759892, 354290340121018369, 220161564567666699) return message.reply("Developerów, Misiaczków nie zbanujesz :D");
+      message.guild.member(f).ban(BReason);
+      message.channel.send(`Banned ${f}!`);
+  });
+  message.channel.send("Wszyscy Użytkownicy zostali zbanowali. Pozdrawiam ANF 2.0 XD");
+  }
 
     if(cmd === `${prefix}ban`){	
 
