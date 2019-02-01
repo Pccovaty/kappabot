@@ -7,28 +7,6 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 
 
-const serverStats = {
-  guildID: "516351264318291968",
-  totalUsersID: "522479632528703488",
-  botCountID: "522479718092767233",
-  onlinecountID: "522480381526802456"
-
-};
-bot.on("guildMemberAdd", member => {
-  
-  if (member.guild.id !== serverStats.guildID) return;
-
-  bot.channels.get(serverStats.totalUsersID).setName(`➸ Osób: ${member.guild.memberCount}`);
-  bot.channels.get(serverStats.onlinecountID).setName(`➸ ${member.user.tag}`);
-  bot.channels.get(serverStats.botCountID).setName(`➸ Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-});
-bot.on("guildMemberRemove", member => {
-
-  if (member.guild.id !== serverStats.guildID) return;
-
-  bot.channels.get(serverStats.totalUsersID).setName(`➸ Osób: ${member.guild.memberCount}`);
-  bot.channels.get(serverStats.botCountID).setName(`➸ Boty: ${member.guild.members.filter(m => m.user.bot).size}`);
-});
 bot.on("guildMemberAdd", async member => {
 
   console.log(`${member.id} dołączył(a) na serwer.`);
@@ -72,30 +50,7 @@ bot.on("message", async message => {
   }
 
 });
-bot.on("ready", async() => {	
- let guild = bot.guilds.get('516351264318291968');	
- 
-      let all = 0;	
-     let offline = 0;	
- 
-      const interval = setInterval(function () {	
-         let guild = bot.guilds.get('516351264318291968');	
-         guild.members.forEach(member => {	
- 
-              if (!member.user.bot) all++;	
-             if (member.user.presence.status == 'offline' && !member.user.bot) offline++;	
-         });	
- 
-       let online = all - offline;	
- 
-          bot.channels.get('522482489554632725').setName("➸ Online: " + online);	
- 
-          all = 0;	
-         offline = 0;	
- 
-       }, 1 * 5000);	
- 
-  });
+
 bot.on("ready", async() => {
       setInterval(async () => {
     const statuslist = [
